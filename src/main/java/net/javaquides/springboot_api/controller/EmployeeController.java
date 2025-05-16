@@ -3,7 +3,6 @@ package net.javaquides.springboot_api.controller;
 import net.javaquides.springboot_api.exception.ResourveNotFoundException;
 import net.javaquides.springboot_api.model.Employee;
 import net.javaquides.springboot_api.repository.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -57,8 +56,6 @@ public class EmployeeController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
         }
     }
-
-
 
     @PutMapping("{id}")
     public ResponseEntity<Map<String, Object>> updateEmployee(@PathVariable long id, @RequestBody Employee employeeDetail) {
