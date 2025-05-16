@@ -6,6 +6,8 @@ import lombok.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Getter
@@ -29,11 +31,22 @@ public class Menu {
     @Column(name = "display_order")
     private Integer displayOrder;
 
-    @Column(name = "create_at")
+    @CreationTimestamp
+    @Column(name = "create_at", updatable = false)
     private LocalDateTime createdAt;
 
+    @UpdateTimestamp
     @Column(name = "update_at")
     private LocalDateTime updatedAt;
+    @PrePersist
+    @PreUpdate
+    private void generateUrlFromName() {
+        if (this.name != null && !this.name.isEmpty()) {
+            this.url = this.name.toLowerCase()
+                    .replaceAll("[^a-z0-9]+", "-")  // Replace non-alphanumeric with hyphen
+                    .replaceAll("^-+|-+$", "");     // Trim leading/trailing hyphens
+        }
+    }
 }
 
 

@@ -29,13 +29,13 @@ public class SpringbootApiApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-		Menu menu = new Menu();
-		menu.setDisplayOrder(1);
-		menu.setName("Home Page");
-		menu.setUrl("/home page");
-		menu.setIcon("/icon");
-		menu.setCreatedAt(LocalDateTime.now());
-		menuRepository.save(menu);
+//		Menu menu = new Menu();
+//		menu.setDisplayOrder(1);
+//		menu.setName("Home Page");
+//	menu.setUrl("/home page");
+//		menu.setIcon("/icon");
+//		menu.setCreatedAt(LocalDateTime.now());
+//		menuRepository.save(menu);
 
 //		SubMenu subMenu = new SubMenu();
 //		subMenu.setDisplayOrder(1);

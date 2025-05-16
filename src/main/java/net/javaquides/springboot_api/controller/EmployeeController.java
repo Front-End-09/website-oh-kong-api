@@ -19,6 +19,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    //List Employee
     @GetMapping
     public List<Employee> getAllEmployee() {
         return employeeRepository.findAll();
@@ -30,6 +31,7 @@ public class EmployeeController {
         return employeeRepository.save(employee);
     }
 
+    // Detail Employee
     @GetMapping("{id}")
     public ResponseEntity<Map<String, Object>> getEmployeeById(@PathVariable long id) {
         Map<String, Object> response = new LinkedHashMap<>();  // Using LinkedHashMap to maintain insertion order
@@ -57,6 +59,8 @@ public class EmployeeController {
         }
     }
 
+
+    // Update Employee
     @PutMapping("{id}")
     public ResponseEntity<Map<String, Object>> updateEmployee(@PathVariable long id, @RequestBody Employee employeeDetail) {
         Map<String, Object> response = new HashMap<>();
@@ -81,6 +85,7 @@ public class EmployeeController {
         }
     }
 
+    //Delete employee
     @DeleteMapping("{id}")
     public ResponseEntity<Map<String, Object>> deleteEmployee(@PathVariable long id) {
         Map<String, Object> response = new HashMap<>();

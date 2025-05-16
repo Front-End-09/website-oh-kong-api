@@ -3,7 +3,6 @@ package net.javaquides.springboot_api.controller;
 import net.javaquides.springboot_api.exception.ResourveNotFoundException;
 import net.javaquides.springboot_api.model.Employee;
 import net.javaquides.springboot_api.model.Menu;
-import net.javaquides.springboot_api.repository.EmployeeRepository;
 import net.javaquides.springboot_api.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,4 +25,11 @@ public class MenuController {
     public List<Menu> getAllMenu(){
         return menuRepository.findAll();
     }
+    //Store Menu
+    @PostMapping
+    public Menu storeMenu (@RequestBody Menu menu){
+       return menuRepository.save(menu);
+    }
+
+
 }
