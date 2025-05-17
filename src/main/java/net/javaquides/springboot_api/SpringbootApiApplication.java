@@ -28,22 +28,5 @@ public class SpringbootApiApplication implements CommandLineRunner {
 	private SubMenuRepository subMenuRepository;
 
 	@Override
-	public void run(String... args) {
-//		Menu menu = new Menu();
-//		menu.setDisplayOrder(1);
-//		menu.setName("Home Page");
-//	menu.setUrl("/home page");
-//		menu.setIcon("/icon");
-//		menu.setCreatedAt(LocalDateTime.now());
-//		menuRepository.save(menu);
-
-//		SubMenu subMenu = new SubMenu();
-//		subMenu.setDisplayOrder(1);
-//		subMenu.setName("Home");
-//		subMenu.setUrl("/home");
-//		subMenu.setIcon("/icon");
-//		subMenu.setParentId(1);
-//		subMenu.setCreatedAt(LocalDateTime.now());
-//		subMenuRepository.save(subMenu);
-	}
+	public void run(String... args) {}
 }
